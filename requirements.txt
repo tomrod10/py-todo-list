@@ -1,4 +1,3 @@
-"""
 Requirements:
 -Each todo list item will have a max input of 50 chars
 -Each todo list item will have a "Completed" box
@@ -36,4 +35,4 @@ Toggle:
 
 Displaying list:
 -Loop over list
-"""
+-List should display above the prompts
