@@ -4,7 +4,7 @@ Requirements:
     -i.e. [x] for completed and [ ] for incompleted
 -Each todo item will have number associated
 
--Ask user to "Do you want to (Add/Edit/Delete/Toggle) todo? "
+-Ask user to "Do you want to (Add/Edit/Delete/Toggle/Exit) todo? "
 -Strip spaces
 -User input should not be case-sensitive
 
@@ -36,3 +36,7 @@ Toggle:
 Displaying list:
 -Loop over list
 -List should display above the prompts
+
+Exit:
+-Quits todo list app
+-All progress and info is lost / No data persistence yet
