@@ -18,14 +18,16 @@ Edit:
 -Ask user "What todo # do you want to edit? "
 -Turn input into int
 -Find the todo in the list with index (input # - 1)
--Ask user to input todo info
+-Ask user to input todo description
 -Once todo has been edited print "Todo # has been edited"
 
 Delete:
 -Ask user "What todo # do you want to delete? "
 -Turn input into int
--Find the todo in the list with index (input # - 1)
+-Find the todo in the list with index: (int input - 1)
 -Delete todo
+-Update the id / "#" of each todo
+    -Traverse list from index to the end of the list
 -Print "Todo # has been deleted"
 
 Toggle:
