@@ -1,5 +1,3 @@
-list = []
-
 def action(choice):
     if choice == "Add":
         description = input("Write your todo (50 chars max): ")[:50].strip()
@@ -10,6 +8,8 @@ def action(choice):
     elif choice == "Toggle":
         todo_num = int(input("What todo number do you want to toggle? "))
         toggle_todo(todo_num)
+
+list = []
 
 def is_in_list(num):
     return True if (num > len(list) or len(list) < 1) else False
