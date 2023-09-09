@@ -1,10 +1,24 @@
 list = []
 
+def action(choice):
+    if choice == "Add":
+        description = input("Write your todo (50 chars max): ")[:50].strip()
+        add_todo(description)
+    elif choice == "Edit":
+        todo_num = int(input("What todo number do you want to edit? "))
+        edit_todo(todo_num)
+    elif choice == "Toggle":
+        todo_num = int(input("What todo number do you want to toggle? "))
+        toggle_todo(todo_num)
+
+def is_in_list(num):
+    return True if (num > len(list) or len(list) < 1) else False
+
 def add_todo(description):
     list.append({"id": len(list) + 1, "desc": description, "status": False})
 
 def edit_todo(num):
-    if (num > len(list) or len(list) < 1) or len(list) == 0:
+    if is_in_list(num) or len(list) == 0:
         print("**Invalid entry. Try again!**")
         return
     edit = input("Write your edited todo: ")
@@ -12,7 +26,7 @@ def edit_todo(num):
     print("Todo", num, "has been edited")
 
 def toggle_todo(num):
-    if (num > len(list) or len(list) < 1) or len(list) == 0:
+    if is_in_list(num) or len(list) == 0:
         print("**Invalid entry. Try again!**")
         return
     list[num - 1]["status"] = not list[num - 1]["status"]
@@ -30,17 +44,9 @@ while True:
     
     choice = input("Do you want to (Add/Edit/Toggle/Delete/Exit)? ").capitalize()
     if choice in ("Add", "Edit", "Toggle", "Delete", "Exit"):
-        if choice == "Add":
-            description = input("Write your todo (50 chars max): ")[:50].strip()
-            add_todo(description)
-        elif choice == "Edit":
-            todo_num = int(input("What todo number do you want to edit? "))
-            edit_todo(todo_num)
-        elif choice == "Toggle":
-            todo_num = int(input("What todo number do you want to toggle? "))
-            toggle_todo(todo_num)
-        elif choice == "Exit":
+        if choice == "Exit":
             print("\nGoodbye!")
             break
+        action(choice)
     else:
         print("Invalid option. Try again!")
