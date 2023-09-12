@@ -26,11 +26,10 @@ def add_todo(description):
 def edit_todo(num):
     edit = input("Write your edited todo: ")
     list[num - 1]["desc"] = edit
-    print("Todo", num, "has been edited")
+    print(f"Todo {num} has been edited")
 
 def toggle_todo(num):
     list[num - 1]["status"] = not list[num - 1]["status"]
-    print("Todo", num, "has been toggled")
     
 def delete_todo(num):
     index = num - 1
@@ -44,7 +43,7 @@ while True:
     else:
         for i in range(len(list)):
             status = "[x]" if list[i]["status"] else "[ ]"
-            print(status, list[i]["id"], "-", list[i]["desc"])
+            print(f"{status} {list[i]['id']} - {list[i]['desc']}")
     print("\n")
     
     choice = input("Do you want to (Add/Edit/Toggle/Delete/Exit)? ").capitalize()
