@@ -20,6 +20,9 @@ list = []
 def is_in_list(num):
     return True if (num > len(list) or len(list) < 1) else False
 
+def get_todo_status(status):
+    return "[x]" if status else "[ ]"
+
 def add_todo(description):
     list.append({"id": len(list) + 1, "desc": description, "status": False})
 
@@ -42,7 +45,7 @@ while True:
         print("Todo list is empty. Add a todo!")
     else:
         for i in range(len(list)):
-            status = "[x]" if list[i]["status"] else "[ ]"
+            status = get_todo_status(list[i]["status"])
             print(f"{status} {list[i]['id']} - {list[i]['desc']}")
     print("\n")
     
